@@ -1,0 +1,22 @@
+{
+  "houses": [
+    {
+      "id": "1",
+      "title": "House near beverly hills",
+      "type": "house",
+      "location": "Los Angeles",
+      "price": "3000000",
+      "imageUrl": "https://images.unsplash.com/photo-1542661148-d765588c16c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "owner": "Piotrek"
+    },
+    {
+      "id": "2",
+      "title": "House near warsaw",
+      "type": "apartment",
+      "location": "Warsaw",
+      "price": "3000000",
+      "imageUrl": "https://images.unsplash.com/photo-1542661148-d765588c16c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      "owner": "Rafal Zaorski"
+    }
+  ]
+}

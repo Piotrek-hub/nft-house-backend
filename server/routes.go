@@ -2,7 +2,7 @@ package server
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/piotrek-hub/nft_house_backend/models"
+	"github.com/piotrek-hub/nft_house_backend/db"
 )
 
 func MainRouteHandler(c *gin.Context) {
@@ -12,7 +12,7 @@ func MainRouteHandler(c *gin.Context) {
 }
 
 func AddHouseRoute(c *gin.Context) {
-	var house models.House;
+	var house db.House
 	c.Bind(&house)
 
 	c.JSON(200, gin.H{
@@ -21,12 +21,16 @@ func AddHouseRoute(c *gin.Context) {
 }
 
 func GetHousesRoute(c *gin.Context) {
+	houses := db.GetHouses()
 	c.JSON(200, gin.H{
-		"message": "pong",
+		"data": houses,
 	})
 }
 
 func GetHouseRoute(c *gin.Context) {
-	// id := c.Param("id")
+	id := c.Param("id")
+	houses := db.GetHouses(id)
+	c.JSON(200, gin.H{
+		"data": houses,
+	})
 }
-

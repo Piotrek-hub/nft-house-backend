@@ -3,12 +3,18 @@ package server
 import "github.com/gin-gonic/gin"
 
 func Start() {
-	router := gin.Default()
-	router.GET("/", MainRouteHandler)
+	r := gin.Default()
+	r.Use(gin.Logger())
+	r.Use(gin.Recovery())
 
-	// API
-	router.POST("/api", AddHouseRoute)
-	router.GET("/api", GetHousesRoute)
-	router.GET("/api/:id", GetHouseRoute)
-	router.Run()
+	r.GET("/", MainRouteHandler)
+
+	api := r.Group("/api")
+	{
+		api.POST("/", AddHouseRoute)
+		api.GET("/", GetHousesRoute)
+		api.GET("/:id", GetHouseRoute)
+	}
+
+	r.Run()
 }
